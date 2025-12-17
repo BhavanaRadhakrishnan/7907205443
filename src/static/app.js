@@ -24,7 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <h4>${name}</h4>
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
-          <p><strong>Participants:</strong> ${details.participants.join(', ')}</p>
+          <div class="participants-section">
+            <h5>Participants</h5>
+            <ul>
+              ${details.participants.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
         `;
 
